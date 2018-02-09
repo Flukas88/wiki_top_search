@@ -1,5 +1,5 @@
 # wiki_top_search [![Build Status](https://travis-ci.org/Flukas88/wiki_top_search.svg?branch=master)](https://travis-ci.org/Flukas88/wiki_top_search)
-Finds the top N words by count on wikipedia Edit
+Finds the top N words by count on wikipedia
 
 
 ## Dependency 
