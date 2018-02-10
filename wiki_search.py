@@ -9,7 +9,7 @@ import requests
 
 def _cleanWord(word):
     """
-    Clean the input from bad chars (internal function)
+    (Internal function) Clean the input from those  chars (=, (, ), " , ', ",", \\n', .) 
     Args: the word to be cleaned
     Return: the cleaned word
     """
@@ -17,11 +17,14 @@ def _cleanWord(word):
 
 def getData(id, n):
     """
-    Get data 
+    Get data \n
     Args: 
-          - *id* of the wikipedia page \n
-          - top *n* words 
-    Return: None
+    - the *id* of the wikipedia page \n
+    - top *n* words to consider
+
+    Return: \n 
+    - *None* if *id* is valid \n 
+    - *55* if *id* is not valid
     """
     data = requests.get('https://en.wikipedia.org/w/api.php?action=query&prop=extracts&pageids={}&explaintext&format=json'.format(id))
     result = json.loads(data.text)
