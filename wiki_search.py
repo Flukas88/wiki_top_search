@@ -64,5 +64,4 @@ def getData(id, n):
 
 
 if __name__ == "__main__":
-    print("Test for top 10\n")
-    getData('21721040', 10)
+    print("Finds the top N words by count on wikipedia\n")

@@ -5,7 +5,6 @@ import wiki_search
 
 
 class TopWordsTest(unittest.TestCase):
-
     def setUp(self):
         pass
 
@@ -15,7 +14,6 @@ class TopWordsTest(unittest.TestCase):
     def test_invalid_id(self):
         with self.assertRaises(SystemExit) as cm:
             wiki_search.getData('2172104', 5)
-
         self.assertEqual(cm.exception.code, 55)
 
 if __name__ == '__main__':
