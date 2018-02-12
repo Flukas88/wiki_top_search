@@ -1,13 +1,17 @@
 # -*- coding: utf-8 -*-
 # vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
-import argparse
+from flask import Flask, request
 import wiki_search
 
-parser = argparse.ArgumentParser(description='Data getting from wikipedia')
+app = Flask(__name__)
 
-parser.add_argument('-id', '--id', required=True)
-parser.add_argument('-n', '--n', required=True, type=int)
+@app.route("/")
+def index():
+    return "wikipedia keywords getter"
 
-results = parser.parse_args()
+@app.route('/api/getinfo/<string:id>/<int:n>/')
+def getinfo(id, n):
+    return wiki_search.getData(id, n)
 
-wiki_search.getData(results.id, results.n)
+if __name__ == '__main__':
+    app.run(debug=True)
