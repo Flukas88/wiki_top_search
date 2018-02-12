@@ -5,6 +5,6 @@ python:
 
 install:
   - pip install --upgrade pip
-  - pip install requests six
+  - pip install requests six flask
 # command to run tests
 script: python Unittest.py
