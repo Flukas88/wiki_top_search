@@ -23,8 +23,7 @@ def getData(id, n):
     - top *n* words to consider
 
     Return: \n 
-    - *None* if *id* is valid \n 
-    - *55* if *id* is not valid
+    - end_string: the string containing the info requested or an invalid key message
     """
     end_string = ''
     data = requests.get('https://en.wikipedia.org/w/api.php?action=query&prop=extracts&pageids={}&explaintext&format=json'.format(id))
