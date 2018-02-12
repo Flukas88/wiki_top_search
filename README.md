@@ -5,10 +5,10 @@ Finds the top N words by count on wikipedia
 ## Dependency 
     $ pipenv install requests
     $ pipenv install six
+    $ pipenv install flask
 
 ### How to run it
-    $ pipenv run python main.py -id 21721040 -n 1
-
-### Return codes
-- *0* (all is fine)
-- *55* (id is not valid)
+    $ export FLASK_APP=main.py
+    $ flask run
+  
+Then with a browser open http://127.0.0.1:5000/api/getinfo/21721040/6/
