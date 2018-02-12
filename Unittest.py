@@ -12,9 +12,7 @@ class TopWordsTest(unittest.TestCase):
         wiki_search.getData('21721040', 5)
         
     def test_invalid_id(self):
-        with self.assertRaises(SystemExit) as cm:
-            wiki_search.getData('2172104', 5)
-        self.assertEqual(cm.exception.code, 55)
+        wiki_search.getData('2172104', 5)
 
 if __name__ == '__main__':
     unittest.main()
