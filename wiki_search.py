@@ -26,14 +26,15 @@ def getData(id, n):
     - *None* if *id* is valid \n 
     - *55* if *id* is not valid
     """
+    end_string = ''
     data = requests.get('https://en.wikipedia.org/w/api.php?action=query&prop=extracts&pageids={}&explaintext&format=json'.format(id))
     result = json.loads(data.text)
     try:
         info = result['query']['pages'][id]['extract']
         title = result['query']['pages'][id]['title']
     except KeyError:
-        print("Key {} is invalid\n".format(id))
-        sys.exit(55)
+        end_string += "Key {} is invalid </br>".format(id)
+        return end_string
 
     tmp_words = [_cleanWord(el) for el in info.split(' ')]
     words = filter(None, tmp_words) # remove empty strings
@@ -52,14 +53,15 @@ def getData(id, n):
         inv_map[v] = inv_map.get(v, [])
         inv_map[v].append(k)
 
-    print("URL: https://en.wikipedia.org/w/api.php?action=query&prop=extracts&pageids={}&explaintext&format=json\n Title: {}\n".format(id, title))
-    print("Top {} words:\n".format(n))
+    end_string += "URL: https://en.wikipedia.org/w/api.php?action=query&prop=extracts&pageids={}&explaintext&format=json</br> Title: {}</br>".format(id, title)
+    end_string += "Top {} words:</br>".format(n)
     el_words = list(inv_map.values())
     el_count = list(inv_map.keys())
     cnt_list = sorted(el_count[0:n], reverse=True)
     for cnt in range(0, len(cnt_list)):
         words_string = ", ".join(el_words[cnt])
-        print("- {} {} \n".format(cnt_list[cnt], words_string))
+        end_string += "- {} {} </br>".format(cnt_list[cnt], words_string)
+    return end_string
 
 
 
