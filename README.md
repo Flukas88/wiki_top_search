@@ -7,7 +7,7 @@ Finds the top N words by count on wikipedia
     $ pipenv install six
     $ pipenv install flask
 
-### How to run it
+### How to test it
     $ export FLASK_APP=main.py
     $ flask run
   
