@@ -9,7 +9,7 @@ class TopWordsTest(unittest.TestCase):
         pass
 
     def test_valid_id(self):
-        wiki_search.getData('21721040', 5)
+        self.assertIn("URL", wiki_search.getData('21721040', 5))
         
     def test_invalid_id(self):
         self.assertIn("invalid", wiki_search.getData('2172104', 5))
