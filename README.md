@@ -12,3 +12,6 @@ Finds the top N words by count on wikipedia
     $ flask run
   
 Then with a browser open http://127.0.0.1:5000/api/getinfo/21721040/6/
+
+![alt text](screen.png)
+
