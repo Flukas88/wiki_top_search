@@ -31,7 +31,7 @@ def getData(id, n):
     try:
         info = result['query']['pages'][id]['extract']
         title = result['query']['pages'][id]['title']
-    except KeyError:
+    except (KeyError, TypeError):
         end_string += "Key {} is invalid </br>".format(id)
         return end_string
 
