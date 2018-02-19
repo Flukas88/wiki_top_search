@@ -1,4 +1,5 @@
-# wiki_top_search [![Build Status](https://travis-ci.org/Flukas88/wiki_top_search.svg?branch=master)](https://travis-ci.org/Flukas88/wiki_top_search)
+# wiki_top_search 
+[![Build Status](https://travis-ci.org/Flukas88/wiki_top_search.svg?branch=master)](https://travis-ci.org/Flukas88/wiki_top_search) [![codecov](https://codecov.io/gh/Flukas88/wiki_top_search/branch/master/graph/badge.svg)](https://codecov.io/gh/Flukas88/wiki_top_search)
 Finds the top N words by count on wikipedia
 
 
