@@ -26,7 +26,7 @@ def getData(id, n):
     - end_string: the string containing the info requested or an invalid key message
     """
     end_string = ''
-    data = requests.get('https://en.wikipedia.org/w/v1.php?action=query&prop=extracts&pageids={}&explaintext&format=json'.format(id))
+    data = requests.get('https://en.wikipedia.org/w/api.php?action=query&prop=extracts&pageids={}&explaintext&format=json'.format(id))
     result = json.loads(data.text)
     try:
         info = result['query']['pages'][id]['extract']
@@ -52,7 +52,7 @@ def getData(id, n):
         inv_map[v] = inv_map.get(v, [])
         inv_map[v].append(k)
 
-    end_string += "<b>URL:</b> <i>https://en.wikipedia.org/w/v1.php?action=query&prop=extracts&pageids={}&explaintext&format=json</i></br> <b>Title</b>: {}</br>".format(id, title)
+    end_string += "<b>URL:</b> <i>https://en.wikipedia.org/w/api.php?action=query&prop=extracts&pageids={}&explaintext&format=json</i></br> <b>Title</b>: {}</br>".format(id, title)
     end_string += "<b>Top <i>{}</i> words</b>:</br>".format(n)
     el_words = list(inv_map.values())
     el_count = list(inv_map.keys())
