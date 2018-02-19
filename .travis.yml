@@ -5,6 +5,10 @@ python:
 
 install:
   - pip install --upgrade pip
-  - pip install requests six flask
-# command to run tests
-script: python Unittest.py
+  - pip install requests six flask codecov
+
+script:
+  - coverage run Unittest.py
+
+after_success:
+  - codecov
