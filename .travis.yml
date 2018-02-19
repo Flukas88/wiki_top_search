@@ -5,6 +5,10 @@ python:
 
 install:
   - pip install --upgrade pip
-  - pip install requests six
-# command to run tests
-script: python Unittest.py
+  - pip install requests six codecov
+
+script:
+  - coverage run Unittest.py
+
+after_success:
+  - codecov
