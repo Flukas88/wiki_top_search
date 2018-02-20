@@ -9,23 +9,22 @@ import requests
 
 def _cleanWord(word):
 
+    """Cleans word from chars that are not allowed
 
-"""Cleans word from chars that are not allowed
-
-Arguments:
-    word {string} -- the word to be cleaned
-"""
+    Arguments:
+        word {string} -- the word to be cleaned
+    """
     return word.replace('\n', '').replace('=', '').replace('(', '').replace(')', '').replace('"', '').replace(',', '').replace('.', '')
 
 
 def getData(id, n):
 
-"""Get data from wikipedia
+    """Get data from wikipedia
 
-Arguments:
-    id {string} -- the id of the page
-    n {int} -- descrithe top n elements
-"""
+    Arguments:
+        id {string} -- the id of the page
+        n {int} -- descrithe top n elements
+    """
 
     end_string = ''
     data = requests.get(
