@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
 from flask import Flask, request
+import sys
+sys.path.append("src")
 import wiki_search
 
 app = Flask(__name__)
