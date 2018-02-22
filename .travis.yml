@@ -5,10 +5,10 @@ python:
 
 install:
   - pip install --upgrade pip
-  - pip install requests six codecov
+  - pip install requests six flask codecov
 
 script:
-  - coverage run Unittest.py
+  - coverage run tests/Unittest.py
 
 after_success:
   - codecov
