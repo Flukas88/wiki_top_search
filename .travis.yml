@@ -3,9 +3,11 @@ matrix:
     - os: linux
       sudo: required
       python: 2.7
+      language: python
     - os: linux
       sudo: required
       python: 3.6
+      language: python
 
 install:
   - python -m pip install -U pip
