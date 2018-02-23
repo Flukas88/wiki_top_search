@@ -9,17 +9,13 @@ matrix:
       python: 3.6
     - os: osx
       sudo: required
-      python: 2.7
-    - os: osx
-      sudo: required
-      python: 3.6
   allow_failures:
     - os: osx
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       brew update;
-      brew install python python3;
+      brew install python3;
     fi
 
 install:
