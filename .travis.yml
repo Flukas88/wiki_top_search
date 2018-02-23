@@ -1,7 +1,12 @@
 language: python
-os:
-  - linux
-  - osx
+matrix:
+  include:
+  - os: linux
+    dist: trusty
+  - os: osx
+    osx_image: xcode9.2
+  allow_failures:
+  - os: osx
 python:
   - "2.7"
   - "3.6"
