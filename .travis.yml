@@ -8,10 +8,10 @@ matrix:
       sudo: required
       python: 3.6
     - os: osx
-  allow_failures:
-    - os: osx
       language: generic 
-      env: PYTHON=3.6.4
+      env: PYTHON=3.6.4    
+   allow_failures:
+     - os: osx
     
 
 before_install:
