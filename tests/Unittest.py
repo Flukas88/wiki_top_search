@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
 import sys, os
-sys.path.append(os.path.abspath('../src'))
+sys.path.append(os.path.relpath('../src'))
 import unittest
 from wiki_search import get_data
 
