@@ -42,6 +42,7 @@ install:
   - pip install requests six flask codecov
 
 script:
+  - cp src/wiki_search.py tests
   - coverage run tests/Unittest.py
 
 after_success:
