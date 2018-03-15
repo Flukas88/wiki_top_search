@@ -20,7 +20,7 @@ def v1_version():
 
 @app.route('/v1/getinfo/<string:id>/<int:n>/')
 def getinfo(id, n):
-    return wiki_search.getData(id, n)
+    return wiki_search.get_data(id, n)
 
 
 if __name__ == '__main__':

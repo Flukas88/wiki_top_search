@@ -1,23 +1,22 @@
-# -*- coding: utf-8 -*-
+#/ -*- coding: utf-8 -*-
 # vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
 from __future__ import division, absolute_import, print_function, unicode_literals
 import json
-import sys
 import six
 import requests
 
-
-def _cleanWord(word):
+def clean_word(word):
 
     """Cleans word from chars that are not allowed
 
     Arguments:
         word {string} -- the word to be cleaned
     """
-    return word.replace('\n', '').replace('=', '').replace('(', '').replace(')', '').replace('"', '').replace(',', '').replace('.', '')
+    return word.replace('\n', '').replace('=', '').replace('(', '').replace(')', '') \
+               .replace('"', '') .replace(',', '').replace('.', '')
 
 
-def getData(id, n):
+def get_data(page_id, n):
 
     """Get data from wikipedia
 
@@ -28,16 +27,17 @@ def getData(id, n):
 
     end_string = ''
     data = requests.get(
-        'https://en.wikipedia.org/w/api.php?action=query&prop=extracts&pageids={}&explaintext&format=json'.format(id))
+        'https://en.wikipedia.org/w/api.php?action=query&prop=extracts&\
+        pageids={}&explaintext&format=json'.format(page_id))
     result = json.loads(data.text)
     try:
-        info = result['query']['pages'][id]['extract']
-        title = result['query']['pages'][id]['title']
+        info = result['query']['pages'][page_id]['extract']
+        title = result['query']['pages'][page_id]['title']
     except (KeyError, TypeError):
-        end_string += "Key <b>{}</b> is invalid </br>".format(id)
+        end_string += "Key <b>{}</b> is invalid </br>".format(page_id)
         return end_string
 
-    tmp_words = [_cleanWord(el) for el in info.split(' ')]
+    tmp_words = [clean_word(el) for el in info.split(' ')]
     words = filter(None, tmp_words)  # remove empty strings
     words_dict = {}
 
@@ -50,17 +50,20 @@ def getData(id, n):
             else:
                 words_dict[word] = 1
     inv_map = {}
-    for k, v in six.iteritems(words_dict):
-        inv_map[v] = inv_map.get(v, [])
-        inv_map[v].append(k)
+    for key, value in six.iteritems(words_dict):
+        inv_map[value] = inv_map.get(value, [])
+        inv_map[value].append(key)
 
-    end_string += "<b>URL:</b> <i>https://en.wikipedia.org/w/api.php?action=query&prop=extracts&pageids={}&explaintext&format=json</i></br> <b>Title</b>: {}</br>".format(
-        id, title)
+    end_string += "<b>URL:</b> <i>https://en.wikipedia.org/w/api.php\
+                  ?action=query&prop=extracts&pageids={}&explaintext&\
+                  format=json</i></br> <b>Title</b>: {}</br>"\
+                  .format(page_id, title)
     end_string += "<b>Top <i>{}</i> words</b>:</br>".format(n)
     el_words = list(inv_map.values())
     el_count = list(inv_map.keys())
     cnt_list = sorted(el_count[0:n], reverse=True)
-    end_string += '<table style="width:70%; border: 2px solid black"><tr><th>Count</th><th>Words</th></tr>'
+    end_string += '<table style="width:70%;border: 2px solid black"> \
+                  <tr><th>Count</th><th>Words</th></tr>'
     for cnt in range(0, len(cnt_list)):
         words_string = ", ".join(el_words[cnt])
         end_string += "<tr><td>{}</td><td>{}</td></tr>".format(
