@@ -43,6 +43,7 @@ install:
   - cp src/wiki_search.py tests
 
 script:
+  - coverage run src/wiki_search.py
   - coverage run tests/Unittest.py
 
 after_success:
