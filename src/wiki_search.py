@@ -1,4 +1,4 @@
-#/ -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 # vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
 from __future__ import division, absolute_import, print_function, unicode_literals
 import json
