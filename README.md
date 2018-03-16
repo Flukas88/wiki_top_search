@@ -4,9 +4,7 @@ Finds the top N words by count on wikipedia
 
 
 ## Dependency 
-    $ pipenv install requests
-    $ pipenv install six
-    $ pipenv install flask
+    $ pipenv install requests six flask
 
 ### How to test it
     $ export FLASK_APP=main.py
