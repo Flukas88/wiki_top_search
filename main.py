@@ -18,8 +18,8 @@ def v1_version():
     return "0.1.1"
 
 
-@app.route('/v1/getinfo/<string:id>/<int:n>/')
-def getinfo(id, n):
+@app.route('/v1/getinfo/<string:lang>/<string:pid>/<int:top>/')
+def getinfo(pid, top, lang):
     return wiki_search.get_data(id, n)
 
 
