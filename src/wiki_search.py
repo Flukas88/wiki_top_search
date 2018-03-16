@@ -16,7 +16,7 @@ def clean_word(word):
                .replace('"', '') .replace(',', '').replace('.', '')
 
 
-def get_data(page_id, n):
+def get_data(page_id, n, lang='en'):
 
     """Get data from wikipedia
 
@@ -27,8 +27,8 @@ def get_data(page_id, n):
 
     end_string = ''
     data = requests.get(
-        'https://en.wikipedia.org/w/api.php?action=query&prop=extracts&\
-        pageids={}&explaintext&format=json'.format(page_id))
+        'https://{}.wikipedia.org/w/api.php?action=query&prop=extracts&\
+        pageids={}&explaintext&format=json'.format(lang, page_id))
     result = json.loads(data.text)
     try:
         info = result['query']['pages'][page_id]['extract']
@@ -54,10 +54,10 @@ def get_data(page_id, n):
         inv_map[value] = inv_map.get(value, [])
         inv_map[value].append(key)
 
-    end_string += "<b>URL:</b> <i>https://en.wikipedia.org/w/api.php\
+    end_string += "<b>URL:</b> <i>https://{}.wikipedia.org/w/api.php\
                   ?action=query&prop=extracts&pageids={}&explaintext&\
                   format=json</i></br> <b>Title</b>: {}</br>"\
-                  .format(page_id, title)
+                  .format(lang, page_id, title)
     end_string += "<b>Top <i>{}</i> words</b>:</br>".format(n)
     el_words = list(inv_map.values())
     el_count = list(inv_map.keys())
