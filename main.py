@@ -15,12 +15,12 @@ def index():
 
 @app.route("/v1/version")
 def v1_version():
-    return "0.1.1"
+    return "0.1.2"
 
 
 @app.route('/v1/getinfo/<string:lang>/<string:pid>/<int:top>/')
 def getinfo(pid, top, lang):
-    return wiki_search.get_data(id, n)
+    return wiki_search.get_data(pid, top, lang)
 
 
 if __name__ == '__main__':
