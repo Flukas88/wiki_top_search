@@ -50,7 +50,8 @@ def get_data(page_id, n, lang='en'):
             else:
                 words_dict[word] = 1
     inv_map = {}
-    for key, value in six.iteritems(words_dict):
+    
+    for count, (key, value) in enumerate(words_dict.iteritems(), 1)
         inv_map[value] = inv_map.get(value, [])
         inv_map[value].append(key)
 
