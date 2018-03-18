@@ -31,11 +31,29 @@
     .TFtable tr:nth-child(even) {
       background: #dae5f4;
     }
+
+    #display-success
+    {
+      width: 600px;
+        border: 1px solid #D8D8D8;
+          padding: 10px;
+            border-radius: 5px;
+              font-family: Arial;
+                font-size: 11px;
+                  text-transform: uppercase;
+                    background-color: rgb(236, 255, 216);
+                      color: green;
+                        text-align: center;
+                          margin-top: 30px;
+    }
   </style>
 
 </head>
 
 <body>
+  <center>Results for </br>
+  <div id="display-success">https://{{ lang }}.wikipedia.org/w/api.php?action=query&prop=extracts&pageids={{ pid }}&explaintext&format=json</div></center>
+  </br>
   <table class="TFtable">
     <thead>
       <tr>
