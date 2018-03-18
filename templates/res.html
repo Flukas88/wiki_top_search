@@ -3,21 +3,53 @@
 
 <head>
   <title>Wikipedia top n</title>
+  <style>
+    .TFtable {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .TFtable td {
+      padding: 7px;
+      border: #4e95f4 1px solid;
+    }
+
+    /* provide some minimal visual accomodation for IE8 and below */
+
+    .TFtable tr {
+      background: #b8d1f3;
+    }
+
+    /*  Define the background color for all the ODD background rows  */
+
+    .TFtable tr:nth-child(odd) {
+      background: #b8d1f3;
+    }
+
+    /*  Define the background color for all the EVEN background rows  */
+
+    .TFtable tr:nth-child(even) {
+      background: #dae5f4;
+    }
+  </style>
+
 </head>
 
 <body>
-  <table style="width:70%;border: 2px solid black">
-    <tr>
-      <th>Number of occurences</th>
-      <th>Words </th>
-    </tr>
-    {% for key in words_dict.keys() %}
+  <table class="TFtable">
+    <thead>
+      <tr>
+        <th>Number of occurences</th>
+        <th>Words </th>
+      </tr>
+      {% for key in words_dict.keys() %}
 
-    <tr>
-      <td>{{ key }} </td>
-      <td>{{ words_dict[key]}} </td>
-    </tr>
-    {% endfor %}
+      <tr>
+        <td>{{ key }} </td>
+        <td>{{ words_dict[key]}} </td>
+      </tr>
+      {% endfor %}
+    </thead>
   </table>
 </body>
 
