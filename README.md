@@ -10,6 +10,3 @@ Finds the top N words by count on wikipedia
     $ export FLASK_APP=main.py flask run
   
 Then with a browser open http://127.0.0.1:5000/v1/getinfo/en/21721040/5/
-
-![Screenshoot](screen.png)
-
