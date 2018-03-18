@@ -32,19 +32,18 @@
       background: #dae5f4;
     }
 
-    #display-success
-    {
+    #display-success {
       width: 600px;
-        border: 1px solid #D8D8D8;
-          padding: 10px;
-            border-radius: 5px;
-              font-family: Arial;
-                font-size: 11px;
-                  text-transform: uppercase;
-                    background-color: rgb(236, 255, 216);
-                      color: green;
-                        text-align: center;
-                          margin-top: 30px;
+      border: 1px solid #D8D8D8;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: Arial;
+      font-size: 11px;
+      text-transform: uppercase;
+      background-color: rgb(236, 255, 216);
+      color: green;
+      text-align: center;
+      margin-top: 30px;
     }
   </style>
 
@@ -52,7 +51,8 @@
 
 <body>
   <center>Results for </br>
-  <div id="display-success">https://{{ lang }}.wikipedia.org/w/api.php?action=query&prop=extracts&pageids={{ pid }}&explaintext&format=json</div></center>
+    <div id="display-success">https://{{ lang }}.wikipedia.org/w/api.php?action=query&prop=extracts&pageids={{ pid }}&explaintext&format=json</div>
+  </center>
   </br>
   <table class="TFtable">
     <thead>
@@ -80,24 +80,26 @@
 <head>
   <title>Wikipedia top n</title>
   <style>
-  #display-error
-  {
-  width: 400px;
-  border: 1px solid #D8D8D8;
-  padding: 5px;
-  border-radius: 5px;
-  font-family: Arial;
-  font-size: 11px;
-  text-transform: uppercase;
-  background-color: rgb(255, 249, 242);
-  color: rgb(211, 0, 0);
-  text-align: center;
-  }
+    #display-error {
+      width: 400px;
+      border: 1px solid #D8D8D8;
+      padding: 5px;
+      border-radius: 5px;
+      font-family: Arial;
+      font-size: 11px;
+      text-transform: uppercase;
+      background-color: rgb(255, 249, 242);
+      color: rgb(211, 0, 0);
+      text-align: center;
+    }
   </style>
 </head>
 
 <body>
-  <center><div id="display-error"><strong>{{ pid }}</strong> is an invalid id!</div></center>
+  <center>
+    <div id="display-error">
+      <strong>{{ pid }}</strong> is an invalid id!</div>
+  </center>
 </body>
 
 </html>
