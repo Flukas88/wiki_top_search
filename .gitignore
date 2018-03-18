@@ -5,3 +5,4 @@ __pycache__/
 *.pye
 *.mde
 README.mde
+.idea

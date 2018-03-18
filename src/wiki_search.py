@@ -4,6 +4,7 @@ from __future__ import division, absolute_import, print_function, unicode_litera
 import json
 import requests
 
+
 def clean_word(word):
 
     """Cleans word from chars that are not allowed
@@ -17,11 +18,11 @@ def clean_word(word):
 
 def get_data(page_id, n, lang='en'):
 
-    """Get data from wikipedia
+    """Get data from Wikipedia
 
     Arguments:
         id {string} -- the id of the page
-        n {int} -- descrithe top n elements
+        n {int} -- the top n elements
     """
 
     end_string = ''
@@ -73,4 +74,4 @@ def get_data(page_id, n, lang='en'):
 
 
 if __name__ == "__main__":
-    print("Finds the top N words by count on wikipedia\n")
+    print("Finds the top N words by count on Wikipedia\n")

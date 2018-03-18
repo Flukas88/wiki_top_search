@@ -4,6 +4,7 @@ from flask import Flask, request
 import sys
 sys.path.append("src")
 import wiki_search
+import json
 
 app = Flask(__name__)
 
@@ -15,7 +16,8 @@ def index():
 
 @app.route("/v1/version")
 def v1_version():
-    return "0.1.2"
+    version_string = {'version': 'v0.1.2', 'stable': 'True'}
+    return json.dumps(version_string)
 
 
 @app.route('/v1/getinfo/<string:lang>/<string:pid>/<int:top>/')
