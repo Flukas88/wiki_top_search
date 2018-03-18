@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
-from flask import Flask, request
+from flask import Flask, request, jsonify
 import sys
 sys.path.append("src")
 import wiki_search
@@ -16,8 +16,7 @@ def index():
 
 @app.route("/v1/version")
 def v1_version():
-    version_string = {'version': 'v0.1.2', 'stable': 'True'}
-    return json.dumps(version_string)
+    return jsonify(version='v0.1.2', stable='True')
 
 
 @app.route('/v1/getinfo/<string:lang>/<string:pid>/<int:top>/')
