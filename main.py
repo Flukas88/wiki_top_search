@@ -1,22 +1,22 @@
 # -*- coding: utf-8 -*-
 # vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import sys
 sys.path.append("src")
 import wiki_search
-import json
 
 app = Flask(__name__)
 
+app_version = "v0.1.2"
 
 @app.route("/")
 def index():
-    return "<b>Wikipedia</b> top n keywords"
+    return render_template("index.html",version = app_version) 
 
 
 @app.route("/v1/version")
 def v1_version():
-    return jsonify(version='v0.1.2', stable='True')
+    return jsonify(version=app_version, stable='True')
 
 
 @app.route('/v1/getinfo/<string:lang>/<string:pid>/<int:top>/')
