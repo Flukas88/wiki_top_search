@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "wikipedia keywords getter"
+    return "<b>Wikipedia</b> top n keywords"
 
 
 @app.route("/v1/version")
