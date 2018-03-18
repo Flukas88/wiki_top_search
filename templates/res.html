@@ -1,0 +1,41 @@
+{% if words_dict is not none %}
+<html>
+
+<head>
+  <title>Wikipedia top n</title>
+</head>
+
+<body>
+  <table style="width:70%;border: 2px solid black">
+    <tr>
+      <th>Number of occurences</th>
+      <th>Words </th>
+    </tr>
+    {% for key in words_dict.keys() %}
+
+    <tr>
+      <td>{{ key }} </td>
+      <td>{{ words_dict[key]}} </td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+
+</html>
+
+{% else %}
+
+<html>
+
+<head>
+  <title>Wikipedia top n</title>
+</head>
+
+<body>
+  Invalid
+  <strong>id </strong>!
+</body>
+
+</html>
+
+{% endif %}
