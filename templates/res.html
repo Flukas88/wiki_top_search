@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Wikipedia top n</title>
+  <title>Wikipedia top n version {{ version }}</title>
   <style>
     .TFtable {
       width: 100%;
@@ -14,19 +14,13 @@
       border: #4e95f4 1px solid;
     }
 
-    /* provide some minimal visual accomodation for IE8 and below */
-
     .TFtable tr {
       background: #b8d1f3;
     }
 
-    /*  Define the background color for all the ODD background rows  */
-
     .TFtable tr:nth-child(odd) {
       background: #b8d1f3;
     }
-
-    /*  Define the background color for all the EVEN background rows  */
 
     .TFtable tr:nth-child(even) {
       background: #dae5f4;
@@ -58,10 +52,9 @@
     <thead>
       <tr>
         <th>Number of occurences</th>
-        <th>Words </th>
+        <th>Word(s) </th>
       </tr>
       {% for key in words_dict.keys() %}
-
       <tr>
         <td>{{ key }} </td>
         <td>{{ words_dict[key]}} </td>
@@ -78,7 +71,7 @@
 <html>
 
 <head>
-  <title>Wikipedia top n</title>
+  <title>Wikipedia top n version {{ version }}</title>
   <style>
     #display-error {
       width: 400px;
@@ -98,7 +91,7 @@
 <body>
   <center>
     <div id="display-error">
-      <strong>{{ pid }}</strong> is an invalid id!</div>
+      ID <strong>{{ pid }}</strong> is an invalid!</div>
   </center>
 </body>
 
