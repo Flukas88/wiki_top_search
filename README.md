@@ -7,7 +7,8 @@ Finds the top N words by count on wikipedia
     $ pipenv install requests flask
 
 ### How to test it
-    $ export FLASK_APP=main.py
-    $ flask run
+- clone the repo
+    $ docker build -t wiki_app
+    $ nohup docker run -p 5000:5000 wiki_app &
   
 Then with a browser open http://127.0.0.1:5000/v1/getinfo/en/21721040/5/
