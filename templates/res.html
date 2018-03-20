@@ -3,44 +3,7 @@
 
 <head>
   <title>Wikipedia top n version {{ version }}</title>
-  <style>
-    .TFtable {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .TFtable td {
-      padding: 7px;
-      border: #4e95f4 1px solid;
-    }
-
-    .TFtable tr {
-      background: #b8d1f3;
-    }
-
-    .TFtable tr:nth-child(odd) {
-      background: #b8d1f3;
-    }
-
-    .TFtable tr:nth-child(even) {
-      background: #dae5f4;
-    }
-
-    #display-success {
-      width: 600px;
-      border: 1px solid #D8D8D8;
-      padding: 10px;
-      border-radius: 5px;
-      font-family: Arial;
-      font-size: 11px;
-      text-transform: uppercase;
-      background-color: rgb(236, 255, 216);
-      color: green;
-      text-align: center;
-      margin-top: 30px;
-    }
-  </style>
-
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
@@ -72,20 +35,7 @@
 
 <head>
   <title>Wikipedia top n version {{ version }}</title>
-  <style>
-    #display-error {
-      width: 400px;
-      border: 1px solid #D8D8D8;
-      padding: 5px;
-      border-radius: 5px;
-      font-family: Arial;
-      font-size: 11px;
-      text-transform: uppercase;
-      background-color: rgb(255, 249, 242);
-      color: rgb(211, 0, 0);
-      text-align: center;
-    }
-  </style>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
