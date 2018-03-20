@@ -2,12 +2,8 @@
 
 Finds the top N words by count on wikipedia
 
-
-## Dependency 
-    $ pipenv install requests flask
-
 ### How to test it
-- clone the repo
+    - clone the repo
     $ docker build -t wiki_app
     $ nohup docker run -p 5000:5000 wiki_app &
   
