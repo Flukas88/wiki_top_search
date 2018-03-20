@@ -24,4 +24,5 @@ ENV FLASK_APP=main.py
 
 VOLUME $APP_DIR
 
-RUN cd $APP_DIR && flask run --host=0.0.0.0
+WORKDIR $APP_DIR
+CMD flask run --host=0.0.0.0
