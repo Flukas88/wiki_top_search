@@ -7,7 +7,7 @@ import wiki_search
 
 app = Flask(__name__)
 
-app_version = "v0.1.2"
+app_version = "v0.1.3"
 
 @app.route("/")
 def index():
