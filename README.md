@@ -3,8 +3,11 @@
 Finds the top N words by count on wikipedia
 
 ### How to test it
-    - clone the repo
     $ docker build -t wiki_app
     $ nohup docker run -p 5000:5000 wiki_app &
   
 Then with a browser open http://127.0.0.1:5000/v1/getinfo/en/21721040/5/
+
+### How customize it
+
+You can change the CSS style in *static/style.css*
