@@ -14,7 +14,9 @@ ENV APP_DIR=$BASE_DIR/application/
 
 ADD ./src $APP_DIR/src
 
-ADD ./static $APP_DIR/static
+COPY ./static/status_style.css $APP_DIR/static/status_style.css
+
+COPY ./static/style_cobalt.css $APP_DIR/static/style.css 
 
 ADD ./templates $APP_DIR/templates
 
