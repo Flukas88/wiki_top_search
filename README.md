@@ -11,3 +11,9 @@ Then with a browser open http://127.0.0.1:5000/v1/getinfo/en/21721040/5/
 ### How to customize it
 
 You can change the CSS style in *static/style.css*
+
+### Docker hub
+
+You can pull the Docker image from the hub
+
+    $ docker pull cisco1988/wikipedia_app

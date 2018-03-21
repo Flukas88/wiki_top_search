@@ -28,4 +28,3 @@ VOLUME $APP_DIR
 
 WORKDIR $APP_DIR
 CMD flask run --host=0.0.0.0
-
