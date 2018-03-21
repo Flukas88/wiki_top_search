@@ -1,5 +1,0 @@
- * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
-172.17.0.1 - - [21/Mar/2018 13:24:27] "GET /v1/getinfo/en/21721040/5/ HTTP/1.1" 200 -
-172.17.0.1 - - [21/Mar/2018 13:24:28] "GET /static/status_style.css HTTP/1.1" 200 -
-172.17.0.1 - - [21/Mar/2018 13:24:28] "GET /favicon.ico HTTP/1.1" 404 -
-172.17.0.1 - - [21/Mar/2018 13:24:35] "GET /v1/getinfo/en/217040/5/ HTTP/1.1" 200 -
