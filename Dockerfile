@@ -1,8 +1,8 @@
 FROM ubuntu:latest
-
+  
 MAINTAINER Luca Francesca <luca@lucafrancesca.me>
 
-RUN apt-get update -y && apt-get install -y python-pip python-dev build-essential
+RUN apt-get update -y && apt-get install --no-install-recommends -y python-pip python-dev build-essential && rm -rf /var/lib/apt/lists/* 
 
 ADD requirements.txt /usr/local/bin/
 
@@ -26,3 +26,4 @@ VOLUME $APP_DIR
 
 WORKDIR $APP_DIR
 CMD flask run --host=0.0.0.0
+
