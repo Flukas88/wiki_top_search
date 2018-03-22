@@ -10,7 +10,7 @@ Then with a browser open http://127.0.0.1:5000/v1/getinfo/en/21721040/5/
 
 ### How to customize it
 
-You can change the CSS style in *static/style.css*
+You can change the CSS style in *static/*
 
 ### Docker hub
 
