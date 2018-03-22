@@ -10,7 +10,9 @@ Then with a browser open http://127.0.0.1:5000/v1/getinfo/en/21721040/5/
 
 ### How to customize it
 
-You can change the CSS style in *static/*
+You can add the CSS style in *static/* and change in the Dockerfile
+
+    COPY ./static/style_cobalt.css $APP_DIR/static/style.css 
 
 ### Docker hub
 
