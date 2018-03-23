@@ -37,12 +37,18 @@
 <head>
   <title>Wikipedia top n version {{ version }}</title>
   <link rel=stylesheet type=text/css href="{{ url_for('static', filename='status_style.css') }}">
+  <script>
+  function goBack() {
+    window.history.back();
+  }
+</script>
 </head>
 
 <body>
   <center>
     <div id="display-error">
       ID <strong>{{ pid }}</strong> is an invalid!</div>
+    <button onclick="goBack()">Go Back</button>
   </center>
 </body>
 
