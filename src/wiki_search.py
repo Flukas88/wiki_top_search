@@ -25,7 +25,6 @@ def get_data(page_id, n, lang='en'):
         n {int} -- the top n elements
     """
 
-    end_string = ''
     data = requests.get(
         'https://{}.wikipedia.org/w/api.php?action=query&prop=extracts&\
         pageids={}&explaintext&format=json'.format(lang, page_id))
