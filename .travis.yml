@@ -39,7 +39,6 @@ before_install: |
 install:
   - python -m pip install -U pip
   - pip install -r requirements.txt
-  - cp src/wiki_search.py tests
 
 script:
   - coverage run src/wiki_search.py
