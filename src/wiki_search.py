@@ -31,8 +31,8 @@ def get_data(page_id, top_n, lang='en'):
     """
 
     data = requests.get(
-        'https://{}.wikipedia.org/w/api.php?action=query&prop=extracts&\
-        pageids={}&explaintext&format=json'.format(lang, page_id))
+        f"https://{lang}.wikipedia.org/w/api.php?action=query&prop=extracts&\
+        pageids={page_id}&explaintext&format=json"
     result = json.loads(data.text)
     try:
         info = result['query']['pages'][page_id]['extract']
