@@ -29,10 +29,9 @@ def get_data(page_id, top_n, lang='en'):
         id {string} -- the id of the page
         top_n {int} -- the top n elements
     """
-
-    data = requests.get(
-        f"https://{lang}.wikipedia.org/w/api.php?action=query&prop=extracts&\
+    url = f"https://{lang}.wikipedia.org/w/api.php?action=query&prop=extracts& \
         pageids={page_id}&explaintext&format=json"
+    data = requests.get(url)
     result = json.loads(data.text)
     try:
         info = result['query']['pages'][page_id]['extract']
