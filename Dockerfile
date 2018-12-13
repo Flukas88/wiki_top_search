@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM rcarmo/ubuntu-python:3.7-onbuild-amd64
   
 MAINTAINER Luca Francesca <luca@lucafrancesca.me>
 

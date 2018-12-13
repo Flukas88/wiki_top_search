@@ -22,17 +22,16 @@ def clean_word(word):
                .replace('"', '') .replace(',', '').replace('.', '')
 
 
-def get_data(page_id, top_n, lang='en'):
+def get_data(page_id='0', top_n='1', lang='en'):
     """Get data from Wikipedia
 
     Arguments:
         id {string} -- the id of the page
         top_n {int} -- the top n elements
     """
-    url = f"https://{lang}.wikipedia.org/w/api.php?action=query&prop=extracts& \
-        pageids={page_id}&explaintext&format=json"
-    data = requests.get(url)
+    data = requests.get(F"https://{lang}.wikipedia.org/w/api.php?action=query&prop=extracts&pageids={page_id}&explaintext&format=json")
     result = json.loads(data.text)
+    
     try:
         info = result['query']['pages'][page_id]['extract']
         #title = result['query']['pages'][page_id]['title']
