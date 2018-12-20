@@ -22,8 +22,11 @@ def v1_version():
 
 @app.route('/v1/getinfo/<string:lang>/<string:pid>/<int:top>/')
 def getinfo(pid, top, lang):
-    (title, words_dict) = wiki_search.get_data(pid, top, lang)
-    return render_template("res.html", words_dict=words_dict, title=title, pid=pid, top=top, lang=lang)
+    try:
+        (title, words_dict) = wiki_search.get_data(pid, top, lang)
+        return render_template("res.html", words_dict=words_dict, title=title, pid=pid, top=top, lang=lang)
+    except TypeError:
+        pass
 
 
 if __name__ == '__main__':
