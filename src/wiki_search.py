@@ -29,12 +29,13 @@ def get_data(page_id='0', top_n='1', lang='en'):
         id {string} -- the id of the page
         top_n {int} -- the top n elements
     """
-    data = requests.get(F"https://{lang}.wikipedia.org/w/api.php?action=query&prop=extracts&pageids={page_id}&explaintext&format=json")
+    data = requests.get(F"https://{lang}.wikipedia.org/w/api.php?action=query&prop=extracts&pageids="
+                        F"{page_id}&explaintext&format=json")
     result = json.loads(data.text)
     
     try:
         info = result['query']['pages'][page_id]['extract']
-        #title = result['query']['pages'][page_id]['title']
+        title = result['query']['pages'][page_id]['title']
     except (KeyError, TypeError):
         return None
 
@@ -63,7 +64,7 @@ def get_data(page_id='0', top_n='1', lang='en'):
     for cnt in range(0, len(cnt_list)):
         words_string = ", ".join(el_words[cnt])
         ret_word_dict[cnt_list[cnt]] = words_string
-    return ret_word_dict
+    return title, ret_word_dict
 
 
 if __name__ == "__main__":
