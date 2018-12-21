@@ -26,7 +26,7 @@ def getinfo(pid, top, lang):
         (title, words_dict) = wiki_search.get_data(pid, top, lang)
         return render_template("res.html", words_dict=words_dict, title=title, pid=pid, top=top, lang=lang)
     except TypeError:
-        pass
+       return render_template("res.html", words_dict=None, title='', pid=pid, top=top, lang=lang) 
 
 
 if __name__ == '__main__':
