@@ -15,12 +15,12 @@ def index():
     return render_template("index.html", version = app_version)
 
 
-@app.route("/v1/version")
-def v1_version():
+@app.route("/v2/version")
+def v2_version():
     return jsonify(version=app_version, stable='True')
 
 
-@app.route('/v1/getinfo/<string:lang>/<string:pid>/<int:top>/')
+@app.route('/v2/getinfo/<string:lang>/<string:pid>/<int:top>/')
 def getinfo(pid, top, lang):
     try:
         (title, words_dict) = wiki_search.get_data(pid, top, lang)
