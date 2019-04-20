@@ -10,6 +10,8 @@ requests = "*"
 flask = "*"
 coverage = "*"
 Jinja2 = ">=2.10.1"
+urllib3 = ">=1.24.2"
+
 
 [requires]
 python_version = "3.7"
