@@ -7,7 +7,6 @@
 # pylint: disable=import-error
 # pylint: disable=bad-builtin
 
-from __future__ import division, absolute_import, print_function, unicode_literals
 import json
 import requests
 

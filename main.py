@@ -1,18 +1,17 @@
 # -*- coding: utf-8 -*-
 # vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
-from flask import Flask, request, jsonify, render_template
 import sys
-sys.path.append("src")
-import wiki_search
+from flask import Flask, request, jsonify, render_template
+import src.wiki_search as ws
 
-app = Flask(__name__)
+APP = Flask(__name__)
 
-app_version = "v2.0"
+APP_VERSION = "v2.0"
 
 
 @app.route("/")
 def index():
-    return render_template("index.html", version = app_version)
+    return render_template("index.html", version=APP_VERSION)
 
 
 @app.route("/v2/version")
@@ -23,11 +22,12 @@ def v2_version():
 @app.route('/v2/getinfo/<string:lang>/<string:pid>/<int:top>/')
 def getinfo(pid, top, lang):
     try:
-        (title, words_dict) = wiki_search.get_data(pid, top, lang)
-        return render_template("res.html", words_dict=words_dict, title=title, pid=pid, top=top, lang=lang)
+        (title, words_dict) = ws.get_data(pid, top, lang)
+        return render_template("res.html", words_dict=words_dict, title=title, pid=pid, top=top,
+                               lang=lang)
     except TypeError:
-       return render_template("res.html", words_dict=None, title='', pid=pid, top=top, lang=lang) 
+        return render_template("res.html", words_dict=None, title='', pid=pid, top=top, lang=lang)
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    APP.run(debug=True, port=5000)
