@@ -1,12 +1,10 @@
-FROM rcarmo/ubuntu-python:3.7-onbuild-amd64
-  
-MAINTAINER Luca Francesca <luca@lucafrancesca.me>
+FROM python:3.8.8-slim-buster
 
-RUN apt-get update -y && apt-get install --no-install-recommends -y python-pip python-dev build-essential && rm -rf /var/lib/apt/lists/* 
+MAINTAINER Luca Francesca <luca@lucafrancesca.me>
 
 ADD requirements.txt /usr/local/bin/
 
-RUN pip install setuptools && pip install -r /usr/local/bin/requirements.txt
+RUN pip install -r /usr/local/bin/requirements.txt
 
 ENV BASE_DIR=/srv
 
@@ -27,4 +25,5 @@ ENV FLASK_APP=main.py
 VOLUME $APP_DIR
 
 WORKDIR $APP_DIR
+
 CMD flask run --host=0.0.0.0
