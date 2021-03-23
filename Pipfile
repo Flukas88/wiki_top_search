@@ -9,7 +9,7 @@ verify_ssl = true
 requests = "*"
 flask = "*"
 coverage = "*"
-Jinja2 = ">=2.10.1"
+jinja2 = ">=2.11.3"
 urllib3 = ">=1.24.2"
 
 
