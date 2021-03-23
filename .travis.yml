@@ -2,7 +2,7 @@ matrix:
   include:
     - os: linux
       sudo: required
-      python: 3.6
+      python: 3.8
       language: python
     - os: linux
       dist: xenial
@@ -11,10 +11,7 @@ matrix:
       language: python
     - os: osx
       language: generic
-      env: PYTHON=3.6.4
-    - os: osx
-      language: generic
-      env: PYTHON=3.7.1
+      env: PYTHON=3.8.8
 
 before_install: |
   if [ "$TRAVIS_OS_NAME" == "osx" ]; then
