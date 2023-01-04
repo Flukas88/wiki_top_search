@@ -1,4 +1,4 @@
-FROM python:3.8.8-slim-buster
+FROM python:3.11.1-buster
 
 MAINTAINER Luca Francesca <luca@lucafrancesca.me>
 
