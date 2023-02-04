@@ -4,9 +4,9 @@ Finds the top N words by count on wikipedia
 
 ### How to test it
     $ docker build -t wiki_app .
-    $ docker run -d -p 5000:5000 wiki_app
+    $ docker run -d -p 1234:1234 wiki_app
   
-Then with a browser open http://127.0.0.1:5000/v1/getinfo/en/21721040/5/
+Then with a browser open http://127.0.0.1:1234/v1/getinfo/en/21721040/5/
 
 ### How to customize it
 
