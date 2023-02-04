@@ -9,3 +9,4 @@ README.mde
 .DS_Store
 nohup.out
 env/*
+venv/*
