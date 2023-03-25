@@ -9,22 +9,23 @@
 
 <body>
   <center>Results for {{ title }} </br>
-    <div id="display-success">https://{{ lang }}.wikipedia.org/w/api.php?action=query&prop=extracts&pageids={{ pid }}&explaintext&format=json</div>
-  </br>
-  <table class="TFtable">
-    <thead>
-      <tr>
-        <th>Number of occurences</th>
-        <th>Word(s) </th>
-      </tr>
-      {% for key in words_dict.keys() %}
-      <tr>
-        <td>{{ key }} </td>
-        <td>{{ words_dict[key]}} </td>
-      </tr>
-      {% endfor %}
-    </thead>
-  </table>
+    <div id="display-success">https://{{ lang }}.wikipedia.org/w/api.php?action=query&prop=extracts&pageids={{ pid
+      }}&explaintext&format=json</div>
+    </br>
+    <table class="TFtable">
+      <thead>
+        <tr>
+          <th>Number of occurences</th>
+          <th>Word(s) </th>
+        </tr>
+        {% for key in words_dict.keys() %}
+        <tr>
+          <td>{{ key }} </td>
+          <td>{{ words_dict[key]}} </td>
+        </tr>
+        {% endfor %}
+      </thead>
+    </table>
   </center>
 </body>
 
@@ -38,10 +39,10 @@
   <title>Wikipedia top n version {{ version }}</title>
   <link rel=stylesheet type=text/css href="{{ url_for('static', filename='status_style.css') }}">
   <script>
-  function goBack() {
-    window.history.back();
-  }
-</script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
 </head>
 
 <body>

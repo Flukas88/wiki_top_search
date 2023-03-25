@@ -18,28 +18,37 @@ def clean_word(word):
     Arguments:
         word {string} -- the word to be cleaned
     """
-    return word.replace('\n', '').replace('=', '').replace('(', '').replace(')', '') \
-               .replace('"', '') .replace(',', '').replace('.', '')
+    return (
+        word.replace("\n", "")
+        .replace("=", "")
+        .replace("(", "")
+        .replace(")", "")
+        .replace('"', "")
+        .replace(",", "")
+        .replace(".", "")
+    )
 
 
-def get_data(page_id='0', top_n='1', lang='en'):
+def get_data(page_id="0", top_n="1", lang="en"):
     """Get data from Wikipedia
 
     Arguments:
         id {string} -- the id of the page
         top_n {int} -- the top n elements
     """
-    data = requests.get(F"https://{lang}.wikipedia.org/w/api.php?action=query&prop=extracts&pageids="
-                        F"{page_id}&explaintext&format=json")
+    data = requests.get(
+        f"https://{lang}.wikipedia.org/w/api.php?action=query&prop=extracts&pageids="
+        f"{page_id}&explaintext&format=json"
+    )
     result = json.loads(data.text)
-    
+
     try:
-        info = result['query']['pages'][page_id]['extract']
-        title = result['query']['pages'][page_id]['title']
+        info = result["query"]["pages"][page_id]["extract"]
+        title = result["query"]["pages"][page_id]["title"]
     except (KeyError, TypeError):
         return None
 
-    tmp_words = [clean_word(el) for el in info.split(' ')]
+    tmp_words = [clean_word(el) for el in info.split(" ")]
     words = filter(None, tmp_words)  # remove empty strings
     words_dict = {}
 

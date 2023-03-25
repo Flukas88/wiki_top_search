@@ -2,16 +2,20 @@
       width: 100%;
       border-collapse: collapse;
     }
+
     .TFtable td {
       padding: 7px;
       border: #4e95f4 1px solid;
     }
+
     .TFtable tr {
       background: #b8d1f3;
     }
+
     .TFtable tr:nth-child(odd) {
       background: #b8d1f3;
     }
+
     .TFtable tr:nth-child(even) {
       background: #dae5f4;
     }

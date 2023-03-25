@@ -5,22 +5,28 @@ table.TFtable {
   text-align: center;
   border-collapse: collapse;
 }
-table.TFtable td, table.TFtable th {
+
+table.TFtable td,
+table.TFtable th {
   border: 1px solid #555555;
   padding: 5px 10px;
 }
+
 table.TFtable tbody td {
   font-size: 12px;
   font-weight: bold;
   color: #FFFFFF;
 }
+
 table.TFtable td:nth-child(even) {
   background: #398AA4;
 }
+
 table.TFtable thead {
   background: #398AA4;
   border-bottom: 10px solid #398AA4;
 }
+
 table.TFtable thead th {
   font-size: 15px;
   font-weight: bold;
@@ -28,6 +34,7 @@ table.TFtable thead th {
   text-align: left;
   border-left: 2px solid #398AA4;
 }
+
 table.TFtable thead th:first-child {
   border-left: none;
 }
@@ -35,10 +42,12 @@ table.TFtable thead th:first-child {
 table.TFtable tfoot td {
   font-size: 13px;
 }
+
 table.TFtable tfoot .links {
   text-align: right;
 }
-table.TFtable tfoot .links a{
+
+table.TFtable tfoot .links a {
   display: inline-block;
   background: #FFFFFF;
   color: #398AA4;
