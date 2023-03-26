@@ -33,10 +33,6 @@ def getinfo(pid, top, lang):
         )
 
 
-<<<<<<< HEAD
-if __name__ == '__main__':
-    APP.run(debug=False, port=1234)
-=======
 # endpoint for status
 @APP.route("/v1/status")
 def status():
@@ -45,4 +41,3 @@ def status():
 
 if __name__ == "__main__":
     APP.run(debug=True, port=5000)
->>>>>>> c55a4a1 (style)
