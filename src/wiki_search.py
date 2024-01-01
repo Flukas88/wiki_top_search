@@ -1,5 +1,5 @@
 """
- Get the top n keywords from wikipedia
+Get the top n keywords from wikipedia
 """
 # -*- coding: utf-8 -*-
 # vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
@@ -12,7 +12,7 @@ import json
 import requests
 
 
-def clean_word(word):
+def clean_word(word: str) -> str:
     """Cleans word from chars that are not allowed
 
     Arguments:
@@ -29,7 +29,7 @@ def clean_word(word):
     )
 
 
-def get_data(page_id="0", top_n="1", lang="en"):
+def get_data(page_id="0", top_n="1", lang="en") -> tuple[str, dict[str, str]]:
     """Get data from Wikipedia
 
     Arguments:
